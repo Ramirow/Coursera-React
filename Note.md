@@ -13,5 +13,8 @@
    npm install bootstrap-social@5.1.1     <br/>
 
 ## install React-Redux
-   npm install redux@3.7.2 --save
-   npm install react-redux@5.0.7  --save
+   npm install redux@3.7.2 --save    <br/>
+   npm install react-redux@5.0.7  --save     <br/>
+
+ ## install React-Redux-Form 
+    npm install react-redux-form@1.16.8     <br/>  
