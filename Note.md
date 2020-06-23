@@ -11,3 +11,7 @@
 ## install Font Awesome and Bootstrap-social  
    npm install font-awesome@4.7.0   <br/>
    npm install bootstrap-social@5.1.1     <br/>
+
+## install React-Redux
+   npm install redux@3.7.2 --save
+   npm install react-redux@5.0.7  --save
