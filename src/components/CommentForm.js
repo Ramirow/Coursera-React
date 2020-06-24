@@ -30,10 +30,25 @@ const CommentForm = (props) => {
           <ModalHeader toggle={toggle}>Submit Comment</ModalHeader>
           <ModalBody>
           <LocalForm onSubmit={(values) => handleSubmit(values)}>
+                   <Row className="form-group">
+                     <Label htmlFor="rating" md={10}>Rating</Label>
+                        <Col md={{size: 12}}>
+                                <Control.select model=".rating" name="contactType"
+                                    className="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </Control.select>
+                            </Col>
+                    </Row>
+
+                    
                     <Row className="form-group">
-                                <Label htmlFor="firstname" md={2}>First Name</Label>
-                                <Col md={10}>
-                                    <Control.text model=".firstname" id="firstname" name="firstname"
+                                <Label htmlFor="your name" md={10}>Your Name</Label>
+                                <Col md={12}>
+                                    <Control.text model=".author" id="author" name="author"
                                         placeholder="First Name"
                                         className="form-control"
                                         validators={{
@@ -42,7 +57,7 @@ const CommentForm = (props) => {
                                          />
                                     <Errors
                                         className="text-danger"
-                                        model=".firstname"
+                                        model=".author"
                                         show="touched"
                                         messages={{
                                             required: 'Required',
@@ -52,14 +67,25 @@ const CommentForm = (props) => {
                                      />
                                 </Col>
                             </Row>
+
+                            <Row className="form-group">
+                                <Label htmlFor="comment" md={4}>Comment</Label>
+                                <Col md={12}>
+                                    <Control.textarea model=".comment" id="message" name="comment"
+                                        rows="12"
+                                        className="form-control" />
+                                </Col>
+                            </Row> 
+
+                            <Row className="form-group">
+                                <Col md={{size:10}}>
+                                    <Button type="submit" color="primary">
+                                    Submit
+                                    </Button>
+                                </Col>
+                            </Row>
                           </LocalForm>  
-
-
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={toggle}>Cancel</Button>
-          </ModalFooter>
+                </ModalBody>
         </Modal>
       </div>
     );
