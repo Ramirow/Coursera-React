@@ -1,9 +1,15 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardText, CardTitle } from 'reactstrap';
-import {  Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import {  Breadcrumb, BreadcrumbItem,Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import  { useState } from 'react';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import CommentForm from './CommentForm'
 
 
+    
+  
+  
    function RenderComments({comments}) {
         if (comments == null) {
             return (<div></div>)
@@ -21,6 +27,7 @@ import { Link } from 'react-router-dom';
                         }).format(new Date(comment.date))}
                     </p>
                 </li>
+                
             )
         })
         return (
@@ -29,7 +36,7 @@ import { Link } from 'react-router-dom';
                 <ul className='list-unstyled'>
                     {cmnts}
                 </ul>
-
+                <CommentForm />   
             </div>
         )
     }
@@ -65,7 +72,7 @@ import { Link } from 'react-router-dom';
             <div className="container">
             <div className="row">
                 <Breadcrumb>
-
+                <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                     <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
                     <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
                 </Breadcrumb>

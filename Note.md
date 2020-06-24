@@ -17,4 +17,4 @@
    npm install react-redux@5.0.7  --save     <br/>
 
  ## install React-Redux-Form 
-    npm install react-redux-form@1.16.8     <br/>  
+    npm install react-redux-form@1.16.8       
