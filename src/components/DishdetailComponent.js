@@ -4,7 +4,8 @@ import {  Breadcrumb, BreadcrumbItem,Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import  { useState } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import CommentForm from './CommentForm'
+import CommentForm from './CommentForm';
+import { Loading } from './LoadingComponent';
 
 
     
@@ -63,11 +64,24 @@ import CommentForm from './CommentForm'
     const Dishdetail = (props) => {
       console.log('DishDetail Component render invoked');
         const dish = props.dish
-        if (dish == null) {
-            return (<div></div>)
+        if (props.isLoading) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <Loading />
+                    </div>
+                </div>
+            );
         }
-        // const dishItem = <RenderDish dish = {dish}  />
-        // const commentItem = < RenderComments comments = {dish.comments} />
+        else if (props.errMess) {
+            return(
+                <div className="container">
+                    <div className="row">            
+                        <h4>{props.errMess}</h4>
+                    </div>
+                </div>
+            );
+        }
         return (
             <div className="container">
             <div className="row">

@@ -17,4 +17,8 @@
    npm install react-redux@5.0.7  --save     <br/>
 
  ## install React-Redux-Form 
-    npm install react-redux-form@1.16.8       
+    npm install react-redux-form@1.16.8     
+
+## install Redux-Thunk and Redux-Log      
+   npm install redux-thunk@2.2.0     <br/>
+   npm install redux-logger@3.0.6    <br/>
