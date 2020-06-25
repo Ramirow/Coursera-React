@@ -3,12 +3,10 @@ import { Button, Row, Col, Label } from 'reactstrap';
 import  { useState } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { addComment } from '../redux/ActionCreators';
 
-
-function handleSubmit(values) {
-    console.log('Current State is: ' + JSON.stringify(values));
-    alert('Current State is: ' + JSON.stringify(values));
-    // event.preventDefault();
+function handleSubmit(props,values) {
+    props.addComment(props.dishId, values.rating, values.author, values.comment);
 }   
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -29,7 +27,7 @@ const CommentForm = (props) => {
         <Modal isOpen={modal} toggle={toggle} className={className}>
           <ModalHeader toggle={toggle}>Submit Comment</ModalHeader>
           <ModalBody>
-          <LocalForm onSubmit={(values) => handleSubmit(values)}>
+          <LocalForm onSubmit={(values) => handleSubmit(props,values)}>
                    <Row className="form-group">
                      <Label htmlFor="rating" md={10}>Rating</Label>
                         <Col md={{size: 12}}>
