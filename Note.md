@@ -22,3 +22,20 @@
 ## install Redux-Thunk and Redux-Log      
    npm install redux-thunk@2.2.0     <br/>
    npm install redux-logger@3.0.6    <br/>
+
+## install backend server 
+## create new independent folder called json-server and run cmd inside it 
+   https://www.coursera.org/learn/front-end-react/supplement/I1qo9/exercise-instructions-setting-up-a-server-using-json-server
+
+## to run the server 
+   json-server --watch db.json -p 3001 -d 2000   
+
+## install Fetch
+   npm install cross-fetch@2.1.0
+
+
+
+
+   
+       
+

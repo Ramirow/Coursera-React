@@ -5,7 +5,10 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { addComment } from '../redux/ActionCreators';
 
+
 function handleSubmit(props,values) {
+    console.log('Current State is: ' + JSON.stringify(values));
+        alert('Current State is: ' + JSON.stringify(values));
     props.addComment(props.dishId, values.rating, values.author, values.comment);
 }   
 const required = (val) => val && val.length;
