@@ -9,7 +9,7 @@ import { addComment } from '../redux/ActionCreators';
 function handleSubmit(props,values) {
     console.log('Current State is: ' + JSON.stringify(values));
         alert('Current State is: ' + JSON.stringify(values));
-    props.addComment(props.dishId, values.rating, values.author, values.comment);
+    props.postComment(props.dishId, values.rating, values.author, values.comment);
 }   
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -34,7 +34,7 @@ const CommentForm = (props) => {
                    <Row className="form-group">
                      <Label htmlFor="rating" md={10}>Rating</Label>
                         <Col md={{size: 12}}>
-                                <Control.select model=".rating" name="contactType"
+                                <Control.select model=".rating" name="rating"
                                     className="form-control">
                                     <option>1</option>
                                     <option>2</option>
