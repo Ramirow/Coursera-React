@@ -7,6 +7,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import CommentForm from './CommentForm';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 
     
@@ -16,8 +17,11 @@ import { baseUrl } from '../shared/baseUrl';
         if (comments == null) {
             return (<div></div>)
         }
+        
         const cmnts = comments.map(comment => {
+            
             return (
+                <Fade in>
                 <li key={comment.id}>
                     <p>{comment.comment}</p>
                     <p>-- {comment.author},
@@ -28,15 +32,17 @@ import { baseUrl } from '../shared/baseUrl';
                             day: '2-digit'
                         }).format(new Date(comment.date))}
                     </p>
-                </li>
-                
+                </li> 
+                </Fade>   
             )
         })
         return (
             <div className='col-12 col-md-5 m-1'>
                 <h4> Comments </h4>
                 <ul className='list-unstyled'>
+                <Stagger in> 
                     {cmnts}
+                </Stagger>    
                 </ul>
                 <CommentForm dishId={dishId} postComment={postComment} />  
             </div>
@@ -46,6 +52,11 @@ import { baseUrl } from '../shared/baseUrl';
   function  RenderDish({dish}) {
         if (dish != null) {
             return (
+                <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
                 <div className='col-12 col-md-5 m-1'>
                     <Card>
                     <CardImg top src={baseUrl + dish.image} alt={dish.name} />
@@ -55,6 +66,7 @@ import { baseUrl } from '../shared/baseUrl';
                         </CardBody>
                     </Card>
                 </div>
+            </FadeTransform>
             )
         }
         else {

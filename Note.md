@@ -36,6 +36,10 @@
 ## install react-transition-group
    npm install react-transition-group@2.3.0   
 
+## Install react-animation-components
+   npm install react-animation-components@3.0.0
+   npm install prop-types@15.6.0
+
 
 
 
