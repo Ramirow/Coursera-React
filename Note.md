@@ -33,6 +33,9 @@
 ## install Fetch
    npm install cross-fetch@2.1.0
 
+## install react-transition-group
+   npm install react-transition-group@2.3.0   
+
 
 
 
